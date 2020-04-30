@@ -14,9 +14,9 @@ execute_process(COMMAND python ${PROJECT_SOURCE_DIR}/A/preparing.py WORKING_DIRE
 
 set(EXECUTABLE_OUTPUT_PATH "../bin")
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/C/googletest-dir/googletest)
+add_subdirectory(${PROJECT_SOURCE_DIR}/C/googletest_dir/googletest)
 
-set(GTEST_SOURCE_DIR ${PROJECT_SOURCE_DIR}/C/googletest-dir/googletest)
+set(GTEST_SOURCE_DIR ${PROJECT_SOURCE_DIR}/C/googletest_dir/googletest)
 
 include_directories(${GTEST_SOURCE_DIR}/include ${GTEST_SOURCE_DIR})
 
