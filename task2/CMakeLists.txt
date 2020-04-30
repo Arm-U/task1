@@ -22,7 +22,7 @@ include_directories(${GTEST_SOURCE_DIR}/include ${GTEST_SOURCE_DIR})
 
 add_executable(CTest ${PROJECT_SOURCE_DIR}/C/main_test.cpp)
 
-target_link_libraries(CTest gtest gtest_main)
+target_link_libraries(CTest gtest gtest_main dirB)
 
 enable_testing()
 
