@@ -12,8 +12,4 @@ target_link_libraries(C dirB)
 
 execute_process(COMMAND python ${PROJECT_SOURCE_DIR}/A/preparing.py WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/A)
 
-set_target_properties(C
-	PROPERTIES
-	LIBRARY_OUTPUT_DIRECTORY "lib"
-	RUNTIME_OUTPUT_DIRECTORY "bin"
-)
+set(EXECUTABLE_OUTPUT_PATH "../bin")
