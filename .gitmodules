@@ -1,3 +1,0 @@
-[submodule "task2/task2/C/googletest_dir/googletest"]
-	path = task2/task2/C/googletest_dir/googletest
-	url = https://github.com/google/googletest.git
