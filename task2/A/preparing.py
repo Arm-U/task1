@@ -1,4 +1,8 @@
 print('Hello, world!')
 
 with open("index.h", "w") as ind:
-    pass
+    ind.write("""
+    int foo2() {
+        return 1;
+    }
+""")
