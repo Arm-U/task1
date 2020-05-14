@@ -6,7 +6,6 @@ if (ARM_BUILD)
 
 	set(CMAKE_C_COMPILER ${TOOLCHAIN}/arm-linux-gnueabihf-gcc)
 	set(CMAKE_CXX_COMPILER ${TOOLCHAIN}/arm-linux-gnueabihf-g++)
-	set(CMAKE_LIBRARY_ARCHITECTURE ${TOOLCHAIN}/arm-linux-gnueabihf)
 
 	set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 
@@ -17,9 +16,9 @@ endif()
 
 project(SimpleLibrary)
 
-include_directories(include)
-
 if(ARM_BUILD)
+	include_directories(include)
+
 	install(FILES ${SimpleLibrary_SOURCE_DIR}/include/buffer.h
 		DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 	set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
