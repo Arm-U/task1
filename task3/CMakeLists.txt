@@ -22,16 +22,16 @@ endif()
 project(SimpleLibrary)
 
 if(ARM_BUILD)
-	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
-	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
-	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
-
 	include_directories(include)
 
 	install(FILES ${SimpleLibrary_SOURCE_DIR}/include/buffer.h
 		DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 	set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 	set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
+	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
+	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
 endif()
 
 add_subdirectory(src)
