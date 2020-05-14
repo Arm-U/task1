@@ -17,19 +17,15 @@ if (ARM_BUILD)
 	set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 	set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 	set(THREADS_PTHREAD_ARG "0" CACHE STRING "Result from TRY_RUN" FORCE)
-	
-	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
-	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
-	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
-else()
-	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
-	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
-	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
 endif()
 
 project(SimpleLibrary)
 
 if(ARM_BUILD)
+	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
+	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
+	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
+
 	include_directories(include)
 
 	install(FILES ${SimpleLibrary_SOURCE_DIR}/include/buffer.h
