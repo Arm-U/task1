@@ -29,5 +29,8 @@ add_executable(MainLib main_lib.cpp)
 target_link_libraries(MainLib buffer)
 
 install(TARGETS Main MainLib
+	ARCHIVE DESTINATION lib
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
 	PUBLIC_HEADER DESTINATION include)
 
