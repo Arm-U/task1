@@ -1,13 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
+
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
 set(CMAKE_CXX_COMPILER ${TOOLCHAIN}/arm-linux-gnueabihf-g++) 
 set(CMAKE_C_COMPILER ${TOOLCHAIN}/arm-linux-gnueabihf-gcc)
-set(CMAKE_FIND_ROOT_PATH ${TOOLCHAIN})
-
-set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 project(SimpleLibrary)
 
@@ -28,3 +24,4 @@ target_link_libraries(MainLib buffer)
 
 install(TARGETS Main MainLib
 	DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+
